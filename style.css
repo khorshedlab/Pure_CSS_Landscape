@@ -1,0 +1,350 @@
+* {
+  margin: 0;
+}
+
+.scene {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: skyblue;
+}
+
+.grass {
+  width: 100%;
+  height: 20px;
+  background: #69d577;
+}
+.soil {
+  width: 100%;
+  height: 90px;
+  background: #dea057;
+  border-top: 6px solid rgb(236, 236, 109);
+}
+.tree_group {
+  display: flex;
+  align-items: flex-end;
+}
+.tree_1,
+.tree_2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.tree_1 {
+  position: relative;
+  right: -30px;
+}
+.tree_1 .tree_leaf {
+  width: 120px;
+  height: 130px;
+  background-color: #69d577;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 43%;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 50%;
+}
+.tree_1 .tree_body {
+  border-bottom: 80px solid#ce9461;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  height: 0;
+  width: 15px;
+}
+.tree_2 .tree_leaf {
+  width: 150px;
+  height: 150px;
+  background-color: #4b9455;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 43%;
+  border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 50%;
+}
+.tree_2 .tree_body {
+  border-bottom: 90px solid#ce9461;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  height: 0;
+  width: 15px;
+}
+
+.land_elements {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+/*House*/
+.house {
+  display: flex;
+  align-items: flex-end;
+}
+.house_font_top {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 62px solid transparent;
+  border-right: 62px solid transparent;
+  border-bottom: 60px solid #e0d8b0;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+}
+
+.house_font_top::after {
+  content: "";
+  width: 6px;
+  height: 100px;
+  background-color: #ff6fb5;
+  border: 2px solid black;
+  position: absolute;
+  transform-origin: top;
+  border-top: none;
+
+  transform: rotate(45deg);
+}
+.house_font_top::before {
+  content: "";
+  width: 6px;
+  height: 110px;
+  background-color: #ff6fb5;
+  border: 2px solid black;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  transform-origin: top;
+  transform: rotate(-40deg);
+}
+.house_font_bottom {
+  width: 120px;
+  height: 150px;
+  background-color: #e0d8b0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(60, 60, 60);
+  border-top: none;
+  border-bottom: none;
+  position: relative;
+  z-index: 4;
+}
+.house_font_bottom .window {
+  width: 40px;
+  display: flex;
+  background-color: aquamarine;
+  height: 30px;
+  border: 2px solid black;
+}
+.house_font_bottom .window > div {
+  width: 33%;
+  height: 100%;
+}
+.house_font_bottom .window > div:nth-child(2) {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+.house_roof {
+  width: 230px;
+  height: 90px;
+  transform: skew(20deg);
+  background: #ff6fb5;
+  position: relative;
+  left: -30px;
+  z-index: 0;
+  position: relative;
+  border-right: 2px solid black;
+}
+.house_roof::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  border: 1px solid black;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.house_roof::after {
+  content: "";
+  width: 100%;
+  height: 0;
+  border: 1px solid black;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.house_cimni {
+  width: 30px;
+  height: 18px;
+  background-color: #dea057;
+  position: absolute;
+  right: 40px;
+  top: -18px;
+  transform: skew(-20deg);
+  border: 2px solid black;
+  z-index: -22;
+  border-bottom: none;
+}
+.house_cimni::before {
+  content: "";
+  width: 40px;
+  height: 10px;
+  border: 2px solid black;
+  position: absolute;
+  background-color: #dea057;
+  top: -10px;
+  left: -7px;
+}
+.house_forward {
+  display: flex;
+  align-items: flex-end;
+  width: 200px;
+  height: 100px;
+  background-color: #e0d8b0;
+  border: 2px solid black;
+  border-left: none;
+  border-bottom: none;
+  border-top: none;
+}
+
+.house_forward .door {
+  width: 40px;
+  height: 60px;
+  background-color: white;
+  margin-left: 15px;
+  border: 2px solid black;
+  border-bottom: 0;
+  position: relative;
+}
+
+.house_forward .door::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: gray;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+}
+.house_forward .window {
+  width: 60px;
+  display: flex;
+  background-color: aquamarine;
+  height: 40px;
+  border: 2px solid black;
+  align-self: center;
+  margin-left: 30px;
+}
+.house_forward .window > div {
+  width: 50%;
+  height: 100%;
+}
+.house_forward .window > div:first-of-type {
+  border-right: 2px solid black;
+}
+.wind_mill {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+.wind_mill .rotor {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+  top: 15px;
+  left: 5px;
+  animation: rotate 4s infinite linear;
+}
+.rotor::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 220px;
+  background-color: #ffffff;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.rotor::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 20px;
+  background-color: #ffffff;
+  top: 14px;
+  transform: translateX(-50%);
+  left: 50%;
+}
+.wind_mill .pole {
+  border-bottom: 200px solid #ffe1aef8; /*use for height*/
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  height: 0;
+  width: 15px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.sky {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 100px;
+}
+.cloud_group {
+  display: flex;
+}
+.cloud {
+  display: flex;
+  animation: moveCloud 6s linear infinite;
+}
+
+.cloud > div:first-of-type {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  transform: translateX(60%);
+}
+.cloud > div:nth-child(2) {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: white;
+}
+.cloud > div:last-of-type {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  transform: translateX(-50%);
+  margin-top: 30px;
+}
+
+.sun {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgb(255, 191, 0);
+}
+
+@keyframes moveCloud {
+  0% {
+    transform: translate(-15px);
+  }
+  50% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-15px);
+  }
+}
